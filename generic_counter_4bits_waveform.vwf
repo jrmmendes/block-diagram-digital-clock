@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="/home/jrmmendes/Work/HDL/digital_clock/generic_counter_4bits_waveform.vwf" --testbench_file="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/generic_counter_4bits_waveform.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="/home/jrmmendes/Work/HDL/digital_clock/generic_counter_4bits_waveform.vwf" --testbench_file="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/generic_counter_4bits_waveform.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/" digital_clock -c digital_clock</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/" digital_clock -c digital_clock</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="C:/Users/Aluno - D04/Desktop/JRMJ/digital_clock-master/generic_counter_4bits_waveform.vwf" --testbench_file="C:/Users/Aluno - D04/Desktop/JRMJ/digital_clock-master/simulation/qsim/generic_counter_4bits_waveform.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="C:/Users/Aluno - D04/Desktop/JRMJ/digital_clock-master/generic_counter_4bits_waveform.vwf" --testbench_file="C:/Users/Aluno - D04/Desktop/JRMJ/digital_clock-master/simulation/qsim/generic_counter_4bits_waveform.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Aluno - D04/Desktop/JRMJ/digital_clock-master/simulation/qsim/" digital_clock -c digital_clock</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Aluno - D04/Desktop/JRMJ/digital_clock-master/simulation/qsim/" digital_clock -c digital_clock</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work digital_clock.vo
@@ -20,8 +20,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,8 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -287,7 +283,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "max";
-	EXPAND_STATUS = EXPANDED;
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 1;
 	TREE_LEVEL = 0;
