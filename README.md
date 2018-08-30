@@ -5,7 +5,7 @@ Digital clock implemented with Block Diagrams on Quartus.
 0.1.0
 
 # Good Practices
-- Put your description on the modules directory
+- Put your module on the modules directory and create, on the root directory, a _test and _waveform.
 - Do not modify the .gitignore (it removes databases, output files and so on)
 
 # Modules
