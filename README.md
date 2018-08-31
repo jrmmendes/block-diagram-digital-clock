@@ -2,7 +2,7 @@
 Digital clock implemented with Block Diagrams on Quartus.
 
 # Version
-0.1.0
+0.1.1
 
 # Good Practices
 - Put your module on the modules directory and create, on the root directory, a _test and _waveform.
