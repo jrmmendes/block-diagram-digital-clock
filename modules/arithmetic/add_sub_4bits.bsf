@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 200 112)
-	(text "full_adder_4bits" (rect 5 0 101 14)(font "Intel Clear" (font_size 8)))
+	(text "add_sub_4bits" (rect 5 0 92 14)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 80 26 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
@@ -40,8 +40,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "carry_in" (rect 0 0 48 14)(font "Intel Clear" (font_size 8)))
-		(text "carry_in" (rect 21 59 69 73)(font "Intel Clear" (font_size 8)))
+		(text "add_sub" (rect 0 0 51 14)(font "Intel Clear" (font_size 8)))
+		(text "add_sub" (rect 21 59 72 73)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port

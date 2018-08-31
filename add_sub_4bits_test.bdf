@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 200 224 368 240)
 	(text "INPUT" (rect 125 0 154 9)(font "Arial" (font_size 6)))
-	(text "a[3..0]" (rect 5 0 35 10)(font "Arial" ))
+	(text "a[3..0]" (rect 5 0 34 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 200 240 368 256)
 	(text "INPUT" (rect 125 0 154 9)(font "Arial" (font_size 6)))
-	(text "b[3..0]" (rect 5 0 39 12)(font "Intel Clear" ))
+	(text "b[3..0]" (rect 5 0 38 12)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 200 256 368 272)
 	(text "INPUT" (rect 125 0 154 9)(font "Arial" (font_size 6)))
-	(text "cin" (rect 5 0 21 10)(font "Arial" ))
+	(text "add_sub" (rect 5 0 47 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -101,7 +101,7 @@ refer to the applicable agreement for further details.
 )
 (symbol
 	(rect 368 200 552 296)
-	(text "full_adder_4bits" (rect 5 0 101 14)(font "Intel Clear" (font_size 8)))
+	(text "add_sub_4bits" (rect 5 0 92 14)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 80 26 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
@@ -120,8 +120,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "carry_in" (rect 0 0 48 14)(font "Intel Clear" (font_size 8)))
-		(text "carry_in" (rect 21 59 69 73)(font "Intel Clear" (font_size 8)))
+		(text "add_sub" (rect 0 0 51 14)(font "Intel Clear" (font_size 8)))
+		(text "add_sub" (rect 21 59 72 73)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port

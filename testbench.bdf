@@ -1,0 +1,103 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect -8 184 160 200)
+	(text "INPUT" (rect 125 0 154 9)(font "Arial" (font_size 6)))
+	(text "CLOCK_50" (rect 5 0 61 10)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
+)
+(symbol
+	(rect 216 160 376 256)
+	(text "clock_divider" (rect 5 0 84 14)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 75 26 87)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock_50" (rect 0 0 54 14)(font "Intel Clear" (font_size 8)))
+		(text "clock_50" (rect 21 27 75 41)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 160 32)
+		(output)
+		(text "clock_1s" (rect 0 0 53 14)(font "Intel Clear" (font_size 8)))
+		(text "clock_1s" (rect 89 27 142 41)(font "Intel Clear" (font_size 8)))
+		(line (pt 160 32)(pt 144 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 144 80))
+	)
+)
+(symbol
+	(rect 480 160 624 256)
+	(text "generic_counter_4bits" (rect 5 0 137 14)(font "Intel Clear" (font_size 8)))
+	(text "inst1" (rect 8 80 32 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 31 14)(font "Intel Clear" (font_size 8)))
+		(text "clock" (rect 21 27 52 41)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "max[3..0]" (rect 0 0 54 14)(font "Intel Clear" (font_size 8)))
+		(text "max[3..0]" (rect 21 43 75 57)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "q[3..0]" (rect 0 0 37 14)(font "Intel Clear" (font_size 8)))
+		(text "q[3..0]" (rect 86 27 123 41)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 32)(pt 128 32)(line_width 3))
+	)
+	(port
+		(pt 144 48)
+		(output)
+		(text "count" (rect 0 0 35 14)(font "Intel Clear" (font_size 8)))
+		(text "count" (rect 88 43 123 57)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 48)(pt 128 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 80))
+	)
+)
+(connector
+	(pt 376 192)
+	(pt 480 192)
+)
+(connector
+	(pt 216 192)
+	(pt 160 192)
+)
