@@ -53,7 +53,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 40 416 208 432)
+	(rect 40 448 208 464)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "up_down" (rect 5 0 47 12)(font "Arial" ))
 	(pt 168 8)
@@ -493,7 +493,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 232 408 280 440)
+	(rect 232 440 280 472)
 	(text "NOT" (rect 2 0 22 10)(font "Arial" (font_size 6)))
 	(text "inst19" (rect 6 21 34 38)(font "Intel Clear" ))
 	(port
@@ -1224,6 +1224,56 @@ refer to the applicable agreement for further details.
 		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
 	)
 )
+(symbol
+	(rect 216 320 280 400)
+	(text "DFF" (rect 1 0 19 10)(font "Arial" (font_size 6)))
+	(text "inst12" (rect 3 68 31 85)(font "Intel Clear" ))
+	(port
+		(pt 32 80)
+		(input)
+		(text "CLRN" (rect 21 59 44 71)(font "Courier New" (bold)))
+		(text "CLRN" (rect 21 58 44 70)(font "Courier New" (bold)))
+		(line (pt 32 80)(pt 32 76))
+	)
+	(port
+		(pt 0 40)
+		(input)
+		(text "CLK" (rect 3 29 20 41)(font "Courier New" (bold))(invisible))
+		(text "CLK" (rect 3 29 20 41)(font "Courier New" (bold))(invisible))
+		(line (pt 0 40)(pt 12 40))
+	)
+	(port
+		(pt 0 24)
+		(input)
+		(text "D" (rect 14 20 19 32)(font "Courier New" (bold)))
+		(text "D" (rect 14 20 19 32)(font "Courier New" (bold)))
+		(line (pt 0 24)(pt 12 24))
+	)
+	(port
+		(pt 32 0)
+		(input)
+		(text "PRN" (rect 24 13 41 25)(font "Courier New" (bold)))
+		(text "PRN" (rect 24 11 41 23)(font "Courier New" (bold)))
+		(line (pt 32 4)(pt 32 0))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "Q" (rect 45 20 50 32)(font "Courier New" (bold)))
+		(text "Q" (rect 45 20 50 32)(font "Courier New" (bold)))
+		(line (pt 52 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 12 12)(pt 52 12))
+		(line (pt 12 68)(pt 52 68))
+		(line (pt 52 68)(pt 52 12))
+		(line (pt 12 68)(pt 12 12))
+		(line (pt 19 40)(pt 12 47))
+		(line (pt 12 32)(pt 20 40))
+		(circle (rect 28 4 36 12))
+		(circle (rect 28 68 36 76))
+	)
+)
 (connector
 	(text "q[0]" (rect 593 168 611 185)(font "Intel Clear" ))
 	(pt 624 184)
@@ -1739,15 +1789,6 @@ refer to the applicable agreement for further details.
 	(pt 984 328)
 )
 (connector
-	(pt 208 424)
-	(pt 232 424)
-)
-(connector
-	(text "updown" (rect 289 408 326 425)(font "Intel Clear" ))
-	(pt 280 424)
-	(pt 296 424)
-)
-(connector
 	(text "max_value" (rect 32 312 85 329)(font "Intel Clear" ))
 	(pt 40 296)
 	(pt 56 296)
@@ -1770,24 +1811,54 @@ refer to the applicable agreement for further details.
 	(pt 40 352)
 )
 (connector
-	(pt 192 344)
-	(pt 200 344)
-)
-(connector
-	(pt 200 344)
-	(pt 200 312)
-)
-(connector
-	(pt 200 312)
-	(pt 136 312)
-)
-(connector
-	(pt 136 288)
-	(pt 136 312)
-)
-(connector
 	(pt 136 288)
 	(pt 144 288)
+)
+(connector
+	(pt 912 200)
+	(pt 976 200)
+)
+(connector
+	(pt 208 456)
+	(pt 232 456)
+)
+(connector
+	(text "updown" (rect 289 440 326 457)(font "Intel Clear" ))
+	(pt 280 456)
+	(pt 296 456)
+)
+(connector
+	(pt 296 312)
+	(pt 136 312)
+)
+(connector
+	(pt 136 312)
+	(pt 136 288)
+)
+(connector
+	(pt 296 344)
+	(pt 280 344)
+)
+(connector
+	(pt 296 312)
+	(pt 296 344)
+)
+(connector
+	(pt 192 344)
+	(pt 216 344)
+)
+(connector
+	(pt 200 360)
+	(pt 200 408)
+)
+(connector
+	(pt 216 360)
+	(pt 200 360)
+)
+(connector
+	(text "clock" (rect 169 392 193 409)(font "Intel Clear" ))
+	(pt 200 408)
+	(pt 168 408)
 )
 (junction (pt 624 392))
 (junction (pt 624 184))
@@ -1806,5 +1877,5 @@ refer to the applicable agreement for further details.
 (text "when down always 1" (rect 984 400 1105 419)(font "Intel Clear" (font_size 8)))
 (text "when up always 0" (rect 1088 568 1193 587)(font "Intel Clear" (font_size 8)))
 (rectangle (rect 672 144 1528 720)(color 85 170 0))
-(rectangle (rect 344 136 648 576)(color 255 85 0))
+(rectangle (rect 344 144 648 576)(color 255 85 0))
 (rectangle (rect 32 144 328 576)(color 85 0 127))

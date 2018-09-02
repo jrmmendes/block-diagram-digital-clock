@@ -61,16 +61,23 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 240 32)
 		(output)
-		(text "unid_display[3..0]" (rect 0 0 107 19)(font "Intel Clear" (font_size 8)))
-		(text "unid_display[3..0]" (rect 112 27 219 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
+		(text "count" (rect 0 0 31 19)(font "Intel Clear" (font_size 8)))
+		(text "count" (rect 188 27 219 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 240 32)(pt 224 32))
 	)
 	(port
 		(pt 240 48)
 		(output)
-		(text "dez_display[3..0]" (rect 0 0 102 19)(font "Intel Clear" (font_size 8)))
-		(text "dez_display[3..0]" (rect 117 43 219 62)(font "Intel Clear" (font_size 8)))
+		(text "unid_display[3..0]" (rect 0 0 107 19)(font "Intel Clear" (font_size 8)))
+		(text "unid_display[3..0]" (rect 112 43 219 62)(font "Intel Clear" (font_size 8)))
 		(line (pt 240 48)(pt 224 48)(line_width 3))
+	)
+	(port
+		(pt 240 64)
+		(output)
+		(text "dez_display[3..0]" (rect 0 0 102 19)(font "Intel Clear" (font_size 8)))
+		(text "dez_display[3..0]" (rect 117 59 219 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 224 112))
