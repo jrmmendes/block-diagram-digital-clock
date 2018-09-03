@@ -5,3 +5,5 @@ output_files/
 simulation/
 incremental_db/
 db/
+
+*.qws
