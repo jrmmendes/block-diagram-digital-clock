@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2017  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -21,9 +21,9 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 344 208 512 224)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clock" (rect 5 0 30 12)(font "Arial" ))
+	(rect 216 224 384 240)
+	(text "INPUT" (rect 125 0 154 9)(font "Arial" (font_size 6)))
+	(text "clock" (rect 5 0 31 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -33,13 +33,13 @@ refer to the applicable agreement for further details.
 		(line (pt 109 4)(pt 113 8))
 		(line (pt 109 12)(pt 113 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect 344 224 512 240)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "max[3..0]" (rect 5 0 52 12)(font "Arial" ))
+	(rect 216 240 384 256)
+	(text "INPUT" (rect 125 0 154 9)(font "Arial" (font_size 6)))
+	(text "max[4..0]" (rect 5 0 52 12)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -49,13 +49,13 @@ refer to the applicable agreement for further details.
 		(line (pt 109 4)(pt 113 8))
 		(line (pt 109 12)(pt 113 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect 304 280 472 296)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "up_down" (rect 5 0 48 12)(font "Arial" ))
+	(rect 216 256 384 272)
+	(text "INPUT" (rect 125 0 154 9)(font "Arial" (font_size 6)))
+	(text "up_down" (rect 5 0 52 12)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -65,13 +65,13 @@ refer to the applicable agreement for further details.
 		(line (pt 109 4)(pt 113 8))
 		(line (pt 109 12)(pt 113 8))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
-	(rect 664 208 840 224)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "q[3..0]" (rect 90 0 119 17)(font "Intel Clear" ))
+	(rect 528 224 704 240)
+	(text "OUTPUT" (rect 1 0 41 9)(font "Arial" (font_size 6)))
+	(text "q[4..0]" (rect 90 0 119 10)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -85,9 +85,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 664 224 840 240)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "EOC" (rect 90 0 113 12)(font "Arial" ))
+	(rect 528 240 704 256)
+	(text "OUTPUT" (rect 1 0 41 9)(font "Arial" (font_size 6)))
+	(text "count" (rect 90 0 119 12)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -100,62 +100,45 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 512 184 656 280)
-	(text "generic_counter_4bits" (rect 5 0 135 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
+	(rect 384 200 528 296)
+	(text "generic_counter_5bits" (rect 5 0 137 14)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 80 26 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "clock" (rect 0 0 29 19)(font "Intel Clear" (font_size 8)))
-		(text "clock" (rect 21 27 50 46)(font "Intel Clear" (font_size 8)))
+		(text "clock" (rect 0 0 31 14)(font "Intel Clear" (font_size 8)))
+		(text "clock" (rect 21 27 52 41)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "max[3..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
-		(text "max[3..0]" (rect 21 43 76 62)(font "Intel Clear" (font_size 8)))
+		(text "max[4..0]" (rect 0 0 54 14)(font "Intel Clear" (font_size 8)))
+		(text "max[4..0]" (rect 21 43 75 57)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "up_down" (rect 0 0 54 19)(font "Intel Clear" (font_size 8)))
-		(text "up_down" (rect 21 59 75 78)(font "Intel Clear" (font_size 8)))
+		(text "up_down" (rect 0 0 56 14)(font "Intel Clear" (font_size 8)))
+		(text "up_down" (rect 21 59 77 73)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
 		(pt 144 32)
 		(output)
-		(text "q[3..0]" (rect 0 0 38 19)(font "Intel Clear" (font_size 8)))
-		(text "q[3..0]" (rect 85 27 123 46)(font "Intel Clear" (font_size 8)))
+		(text "q[4..0]" (rect 0 0 37 14)(font "Intel Clear" (font_size 8)))
+		(text "q[4..0]" (rect 86 27 123 41)(font "Intel Clear" (font_size 8)))
 		(line (pt 144 32)(pt 128 32)(line_width 3))
 	)
 	(port
 		(pt 144 48)
 		(output)
-		(text "count" (rect 0 0 31 19)(font "Intel Clear" (font_size 8)))
-		(text "count" (rect 92 43 123 62)(font "Intel Clear" (font_size 8)))
+		(text "count" (rect 0 0 35 14)(font "Intel Clear" (font_size 8)))
+		(text "count" (rect 88 43 123 57)(font "Intel Clear" (font_size 8)))
 		(line (pt 144 48)(pt 128 48))
 	)
 	(drawing
 		(rectangle (rect 16 16 128 80))
 	)
-)
-(connector
-	(pt 656 232)
-	(pt 664 232)
-)
-(connector
-	(pt 656 216)
-	(pt 664 216)
-	(bus)
-)
-(connector
-	(pt 512 248)
-	(pt 472 248)
-)
-(connector
-	(pt 472 248)
-	(pt 472 288)
 )
