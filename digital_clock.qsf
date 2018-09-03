@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY generic_counter_4bits_test
+set_global_assignment -name TOP_LEVEL_ENTITY generic_counter_5bits_test
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:56:16  AUGUST 30, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
@@ -97,22 +97,34 @@ set_location_assignment PIN_Y2 -to CLOCK_50
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 
+
+set_global_assignment -name BDF_FILE testbench.bdf
+set_global_assignment -name BDF_FILE minutes_block_test.bdf
+set_global_assignment -name BDF_FILE hour_block_test.bdf
+set_global_assignment -name BDF_FILE generic_counter_4bits_test.bdf
+set_global_assignment -name BDF_FILE digital_clock.bdf
+set_global_assignment -name BDF_FILE comparator_4bits_test.bdf
+set_global_assignment -name BDF_FILE clock_divider_test.bdf
+set_global_assignment -name BDF_FILE all_minutes_block_test_description.bdf
+set_global_assignment -name BDF_FILE add_sub_4bits_test.bdf
+set_global_assignment -name BDF_FILE modules/function/all_minutes_block.bdf
+set_global_assignment -name BDF_FILE modules/decoders/decoder_common_anode.bdf
+set_global_assignment -name BDF_FILE modules/decoders/bcd_to_7segd.bdf
+set_global_assignment -name BDF_FILE modules/comparators/comparator_4bits.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/mux_8bits_4bits.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/minutes_block.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/minutes_alarm_clock_block.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/hour_block.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/generic_counter_4bits.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/full_adder_1bit.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/clock_divider.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/add_sub_4bits.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE minutes_block_waveform.vwf
+set_global_assignment -name BDF_FILE modules/arithmetic/add_sub_5bits.bdf
+set_global_assignment -name BDF_FILE modules/arithmetic/generic_counter_5bits.bdf
+set_global_assignment -name BDF_FILE modules/comparators/comparator_5bits.bdf
+set_global_assignment -name BDF_FILE generic_counter_5bits_test.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name BDF_FILE modules/arithmetic/add_sub_4bits.bdf
-set_global_assignment -name BDF_FILE modules/comparators/comparator_4bits.bdf
-set_global_assignment -name BDF_FILE digital_clock.bdf
-set_global_assignment -name BDF_FILE modules/arithmetic/full_adder_4bits.bdf
-set_global_assignment -name BDF_FILE modules/arithmetic/full_adder_1bit.bdf
-set_global_assignment -name BDF_FILE full_adder_4bits_test.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE full_adder_4bit_waveform.vwf
-set_global_assignment -name BDF_FILE modules/arithmetic/generic_counter_4bits.bdf
-set_global_assignment -name BDF_FILE generic_counter_4bits_test.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE generic_counter_4bits_waveform.vwf
-set_global_assignment -name BDF_FILE comparator_4bits_test.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE comparator_4bits_waveform.vwf
-set_global_assignment -name BDF_FILE modules/arithmetic/clock_divider.bdf
-set_global_assignment -name BDF_FILE clock_divider_test.bdf
-set_global_assignment -name BDF_FILE modules/decoders/decoder_common_anode.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

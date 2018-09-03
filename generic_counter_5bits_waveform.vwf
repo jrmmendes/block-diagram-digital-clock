@@ -1,16 +1,16 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="/home/jrmmendes/Work/HDL/digital_clock/minutes_block_waveform.vwf" --testbench_file="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/minutes_block_waveform.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="/home/jrmmendes/Work/HDL/digital_clock/minutes_block_waveform.vwf" --testbench_file="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/minutes_block_waveform.vwf.vt"</ttestbench_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="/home/jrmmendes/Work/HDL/digital_clock/generic_counter_5bits_waveform.vwf" --testbench_file="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/generic_counter_5bits_waveform.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off digital_clock -c digital_clock --vector_source="/home/jrmmendes/Work/HDL/digital_clock/generic_counter_5bits_waveform.vwf" --testbench_file="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/generic_counter_5bits_waveform.vwf.vt"</ttestbench_cmd>
 <fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/" digital_clock -c digital_clock</fnetlist_cmd>
 <tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/jrmmendes/Work/HDL/digital_clock/simulation/qsim/" digital_clock -c digital_clock</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work digital_clock.vo
-vlog -work work minutes_block_waveform.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.minutes_block_test_vlg_vec_tst
+vlog -work work generic_counter_5bits_waveform.vwf.vt
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.generic_counter_5bits_test_vlg_vec_tst
 vcd file -direction digital_clock.msim.vcd
-vcd add -internal minutes_block_test_vlg_vec_tst/*
-vcd add -internal minutes_block_test_vlg_vec_tst/i1/*
+vcd add -internal generic_counter_5bits_test_vlg_vec_tst/*
+vcd add -internal generic_counter_5bits_test_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -24,11 +24,11 @@ quit -f
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work digital_clock.vo
-vlog -work work minutes_block_waveform.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.minutes_block_test_vlg_vec_tst
+vlog -work work generic_counter_5bits_waveform.vwf.vt
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.generic_counter_5bits_test_vlg_vec_tst
 vcd file -direction digital_clock.msim.vcd
-vcd add -internal minutes_block_test_vlg_vec_tst/*
-vcd add -internal minutes_block_test_vlg_vec_tst/i1/*
+vcd add -internal generic_counter_5bits_test_vlg_vec_tst/*
+vcd add -internal generic_counter_5bits_test_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -75,36 +75,6 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("B1")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("B2")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("CH2")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 SIGNAL("clock")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -115,57 +85,137 @@ SIGNAL("clock")
 	PARENT = "";
 }
 
-SIGNAL("DEZ")
+SIGNAL("count")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("max")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
+	WIDTH = 5;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("max[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "max";
+}
+
+SIGNAL("max[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "max";
+}
+
+SIGNAL("max[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "max";
+}
+
+SIGNAL("max[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "max";
+}
+
+SIGNAL("max[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "max";
+}
+
+SIGNAL("q")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 5;
 	LSB_INDEX = 0;
 	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("DEZ[3]")
+SIGNAL("q[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "DEZ";
+	PARENT = "q";
 }
 
-SIGNAL("DEZ[2]")
+SIGNAL("q[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "DEZ";
+	PARENT = "q";
 }
 
-SIGNAL("DEZ[1]")
+SIGNAL("q[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "DEZ";
+	PARENT = "q";
 }
 
-SIGNAL("DEZ[0]")
+SIGNAL("q[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "DEZ";
+	PARENT = "q";
 }
 
-SIGNAL("system_clock")
+SIGNAL("q[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "q";
+}
+
+SIGNAL("up_down")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -175,109 +225,6 @@ SIGNAL("system_clock")
 	PARENT = "";
 }
 
-SIGNAL("UNID")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("UNID[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "UNID";
-}
-
-SIGNAL("UNID[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "UNID";
-}
-
-SIGNAL("UNID[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "UNID";
-}
-
-SIGNAL("UNID[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "UNID";
-}
-
-TRANSITION_LIST("B1")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 15.0;
-		LEVEL 1 FOR 5.0;
-		NODE
-		{
-			REPEAT = 30;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 5.0;
-		}
-		LEVEL 0 FOR 660.0;
-		LEVEL 1 FOR 20.0;
-	}
-}
-
-TRANSITION_LIST("B2")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 330.0;
-		LEVEL 1 FOR 50.0;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 50.0;
-			LEVEL 1 FOR 50.0;
-		}
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		NODE
-		{
-			REPEAT = 20;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
-		}
-		LEVEL 0 FOR 50.0;
-	}
-}
-
-TRANSITION_LIST("CH2")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 70.0;
-		LEVEL 1 FOR 930.0;
-	}
-}
-
 TRANSITION_LIST("clock")
 {
 	NODE
@@ -285,14 +232,14 @@ TRANSITION_LIST("clock")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 20;
-			LEVEL 0 FOR 25.0;
-			LEVEL 1 FOR 25.0;
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
 		}
 	}
 }
 
-TRANSITION_LIST("DEZ[3]")
+TRANSITION_LIST("count")
 {
 	NODE
 	{
@@ -301,7 +248,52 @@ TRANSITION_LIST("DEZ[3]")
 	}
 }
 
-TRANSITION_LIST("DEZ[2]")
+TRANSITION_LIST("max[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("max[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("max[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("max[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("max[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("q[4]")
 {
 	NODE
 	{
@@ -310,7 +302,7 @@ TRANSITION_LIST("DEZ[2]")
 	}
 }
 
-TRANSITION_LIST("DEZ[1]")
+TRANSITION_LIST("q[3]")
 {
 	NODE
 	{
@@ -319,7 +311,7 @@ TRANSITION_LIST("DEZ[1]")
 	}
 }
 
-TRANSITION_LIST("DEZ[0]")
+TRANSITION_LIST("q[2]")
 {
 	NODE
 	{
@@ -328,21 +320,7 @@ TRANSITION_LIST("DEZ[0]")
 	}
 }
 
-TRANSITION_LIST("system_clock")
-{
-	NODE
-	{
-		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 200;
-			LEVEL 0 FOR 2.5;
-			LEVEL 1 FOR 2.5;
-		}
-	}
-}
-
-TRANSITION_LIST("UNID[3]")
+TRANSITION_LIST("q[1]")
 {
 	NODE
 	{
@@ -351,7 +329,7 @@ TRANSITION_LIST("UNID[3]")
 	}
 }
 
-TRANSITION_LIST("UNID[2]")
+TRANSITION_LIST("q[0]")
 {
 	NODE
 	{
@@ -360,27 +338,18 @@ TRANSITION_LIST("UNID[2]")
 	}
 }
 
-TRANSITION_LIST("UNID[1]")
+TRANSITION_LIST("up_down")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("UNID[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "B1";
+	CHANNEL = "clock";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
@@ -389,7 +358,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B2";
+	CHANNEL = "count";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -398,129 +367,131 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CH2";
+	CHANNEL = "max";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
+	CHILDREN = 3, 4, 5, 6, 7;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "clock";
+	CHANNEL = "max[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 3;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "DEZ";
+	CHANNEL = "max[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 4;
-	TREE_LEVEL = 0;
-	CHILDREN = 5, 6, 7, 8;
+	TREE_LEVEL = 1;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "DEZ[3]";
+	CHANNEL = "max[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
-	PARENT = 4;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "DEZ[2]";
+	CHANNEL = "max[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
-	PARENT = 4;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "DEZ[1]";
+	CHANNEL = "max[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
-	PARENT = 4;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "DEZ[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 8;
-	TREE_LEVEL = 1;
-	PARENT = 4;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "system_clock";
+	CHANNEL = "up_down";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 9;
+	TREE_INDEX = 8;
 	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "UNID";
+	CHANNEL = "q";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+	CHILDREN = 10, 11, 12, 13, 14;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "q[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 10;
-	TREE_LEVEL = 0;
-	CHILDREN = 11, 12, 13, 14;
+	TREE_LEVEL = 1;
+	PARENT = 9;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "UNID[3]";
+	CHANNEL = "q[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 9;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "UNID[2]";
+	CHANNEL = "q[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 9;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "UNID[1]";
+	CHANNEL = "q[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 9;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "UNID[0]";
+	CHANNEL = "q[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 9;
 }
 
 TIME_BAR
