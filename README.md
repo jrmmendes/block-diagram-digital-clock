@@ -11,6 +11,4 @@ Digital clock implemented with Block Diagrams on Quartus.
 - Decoders: bcd to 7 segment decoder
 
 # Roadmap
-- 1.0: Implement 24 hours clock
-- 2.0: Implement alarm
-- 3.0: Implement configuration tools
+- Fix hour module and test on the DE2-115
