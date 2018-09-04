@@ -203,15 +203,15 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "q[25]" (rect 705 312 729 329)(font "Intel Clear" ))
-	(pt 680 328)
-	(pt 736 328)
-)
-(connector
 	(text "q[25..0]" (rect 634 312 669 329)(font "Intel Clear" ))
 	(pt 680 328)
 	(pt 608 328)
 	(bus)
+)
+(connector
+	(text "q[25]" (rect 705 312 729 329)(font "Intel Clear" ))
+	(pt 680 328)
+	(pt 736 328)
 )
 (junction (pt 680 328))
 (text "Clock generator (50MHz to 1Hz)" (rect 216 104 403 123)(font "Intel Clear" (font_size 8)))

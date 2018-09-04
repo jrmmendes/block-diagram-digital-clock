@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2017  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -981,8 +981,8 @@ refer to the applicable agreement for further details.
 (text "pensar em bloco de atraso aqui" (rect 808 448 994 467)(font "Intel Clear" (font_size 8)))
 (text "seleciona quem controla o contador" (rect 696 336 904 355)(font "Intel Clear" (font_size 8)))
 (text "Controle do Up/Down" (rect 536 464 663 483)(font "Intel Clear" (font_size 8)))
-(text "Se a chave estiver em 1 botoes que mandam" (rect 648 616 915 635)(font "Intel Clear" (font_size 8)))
-(text "Se a chave estiver em 0 clock quem manda, saida Q  em 0" (rect 648 600 993 619)(font "Intel Clear" (font_size 8)))
+(text "Se a chave estiver em 1 botoes que mandam" (rect 496 616 763 635)(font "Intel Clear" (font_size 8)))
+(text "Se a chave estiver em 0 clock quem manda, saida Q  em 0" (rect 496 600 841 619)(font "Intel Clear" (font_size 8)))
 (text "normalmente abertos" (rect 216 160 343 179)(font "Intel Clear" (font_size 8)))
 (text "Minutos (Dezena)" (rect 1048 56 1148 75)(font "Intel Clear" (font_size 8)))
 (rectangle (rect 480 40 1224 272))
