@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY all_minutes_block_test_description
+set_global_assignment -name TOP_LEVEL_ENTITY digital_clock
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:56:16  AUGUST 30, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
@@ -90,7 +90,6 @@ set_location_assignment PIN_AD27 -to SW[3]
 set_location_assignment PIN_AB27 -to SW[4]
 set_location_assignment PIN_G19 -to LEDR[0]
 set_location_assignment PIN_F19 -to LEDR[1]
-set_location_assignment PIN_E21 -to LEDg[0]
 set_location_assignment PIN_E22 -to LEDG[1]
 set_location_assignment PIN_Y2 -to CLOCK_50
 
@@ -98,6 +97,8 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 
 
+set_global_assignment -name BDF_FILE modules/function/debounce2.bdf
+set_global_assignment -name BDF_FILE modules/function/debounce.bdf
 set_global_assignment -name BDF_FILE bcd5_to_44_test.bdf
 set_global_assignment -name BDF_FILE testbench.bdf
 set_global_assignment -name BDF_FILE minutes_block_test.bdf
@@ -106,7 +107,6 @@ set_global_assignment -name BDF_FILE generic_counter_4bits_test.bdf
 set_global_assignment -name BDF_FILE digital_clock.bdf
 set_global_assignment -name BDF_FILE comparator_4bits_test.bdf
 set_global_assignment -name BDF_FILE clock_divider_test.bdf
-set_global_assignment -name BDF_FILE all_minutes_block_test_description.bdf
 set_global_assignment -name BDF_FILE add_sub_4bits_test.bdf
 set_global_assignment -name BDF_FILE modules/function/all_minutes_block.bdf
 set_global_assignment -name BDF_FILE modules/decoders/decoder_common_anode.bdf
@@ -130,6 +130,9 @@ set_global_assignment -name BDF_FILE modules/decoders/bcd5_to_44.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE bcd5_to_44_waveform.vwf
 set_global_assignment -name BDF_FILE modules/arithmetic/hour_alarm_block.bdf
 set_global_assignment -name BDF_FILE modules/function/all_hour_block.bdf
+set_location_assignment PIN_E21 -to LEDG[0]
+set_global_assignment -name BDF_FILE modules/arithmetic/clock_divider_50k.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE generic_counter_4bits_waveform.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
